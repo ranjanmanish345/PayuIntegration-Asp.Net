@@ -88,7 +88,8 @@ public class PayuCommunication
 
             using (WebClient client = new WebClient())
             {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; //for .net framework 4.5
+               // ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; //for .net framework 4.0
                 byte[] response = client.UploadValues(UrlRequest, myNameValueCollection);
                 strResponse = Encoding.UTF8.GetString(response);
 
@@ -152,7 +153,8 @@ public class PayuCommunication
 
             using (WebClient client = new WebClient())
             {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; //for .net framework 4.5 
+                //ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; //for .net framework 4.0
                 byte[] response = client.UploadValues(UrlRequest, myNameValueCollection);
                 strResponse = Encoding.UTF8.GetString(response);
 
